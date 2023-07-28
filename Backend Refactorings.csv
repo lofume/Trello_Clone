@@ -1,0 +1,20 @@
+Implementation Smells,,,,,,,
+Project Name,Package Name,Type Name,Method Name,Implementation Smell,Cause of the Smell,Method start line no,Justification
+Group20,Group20SpringBoot.Group20.boards.service,BoardService,getDateFiltered,Magic Number,The method contains a magic number: 2,97,Refactored. Extracted to global variables to increase readability.
+Group20,Group20SpringBoot.Group20.boards.service,BoardService,todayDueTasks,Long Statement,"The length of the statement ""return tasks.stream().filter(task -> Instant.ofEpochMilli(task.getDueDate().getTime()).atZone(ZoneId.systemDefault()).toLocalDate().isEqual(today)).toList();"" is 157.",142,Refactored. Extracted to separate method for better readability.
+Group20,Group20SpringBoot.Group20.boards.service,BoardService,overDueTasks,Long Statement,"The length of the statement ""return tasks.stream().filter(task -> Instant.ofEpochMilli(task.getDueDate().getTime()).atZone(ZoneId.systemDefault()).toLocalDate().isBefore(today)).toList();"" is 158.",148,Refactored. Extracted to separate method for better readability.
+Group20,Group20SpringBoot.Group20.user.entity,UserModel,UserModel,Long Parameter List,The method has 5 parameters. ,36,"Not Refactored. Unnecessary to change the constructor for the user model, instead we can collect more information from the user. E.g., there is no reason to combine first name and last name into one parameter."
+,,,,,,,
+,,,,,,,
+Design Smells,,,,,,,
+Project Name,Package Name,Type Name,Design Smell,Cause of the Smell,,,Justification
+main,Group20SpringBoot.Group20.boards.controller,BoardController,Unutilized Abstraction,The tool detected the smell in this class because this class is potentially unused. (Please ignore the smell if the reported class is auto-generated and/or used to serve a specific known purpose.),,,"BoardController is utilized in project, improper diagnosis by Designite."
+main,Group20SpringBoot.Group20.task.controller,TaskController,Unutilized Abstraction,The tool detected the smell in this class because this class is potentially unused. (Please ignore the smell if the reported class is auto-generated and/or used to serve a specific known purpose.),,,"TaskController is utilized in project, improper diagnosis by Designite."
+main,Group20SpringBoot.Group20,TrelloCloneApplication,Unutilized Abstraction,The tool detected the smell in this class because this class is potentially unused. (Please ignore the smell if the reported class is auto-generated and/or used to serve a specific known purpose.),,,"TrelloCloneApplication is utilized in project, improper diagnosis by Designite."
+main,Group20SpringBoot.Group20.user.controller,UserController,Unutilized Abstraction,The tool detected the smell in this class because this class is potentially unused. (Please ignore the smell if the reported class is auto-generated and/or used to serve a specific known purpose.),,,"UserController is utilized in project, improper diagnosis by Designite."
+main,Group20SpringBoot.Group20.workspaces.controller,WorkspaceController,Unutilized Abstraction,The tool detected the smell in this class because this class is potentially unused. (Please ignore the smell if the reported class is auto-generated and/or used to serve a specific known purpose.),,,"WorkspaceController is utilized in project, improper diagnosis by Designite."
+main,Group20SpringBoot.Group20.workspaces.service,WorkspaceService,Unutilized Abstraction,The tool detected the smell in this class because this class is potentially unused. (Please ignore the smell if the reported class is auto-generated and/or used to serve a specific known purpose.),,,"WorkspaceService is utilized in project, improper diagnosis by Designite."
+,,,,,,,
+,,,,,,,
+Architecture Smells,,,,,,,
+Project Name,Package Name,Architecture Smell,Cause of the Smell,Cause of the Smell,,,
